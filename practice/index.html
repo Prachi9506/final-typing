@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Typing Speed Tester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="theme-switch">
+        <span class="theme-icon">🌞</span>
+        <span class="theme-text">Toggle Theme</span>
+    </button>
+
+    <div class="container">
+        <h1>Advanced Typing Speed Test</h1>
+        
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="normal">Normal Mode</button>
+            <button class="mode-btn" data-mode="distraction">Distraction Mode</button>
+            <button class="mode-btn" data-mode="programming">Programming Mode</button>
+            <button class="mode-btn" data-mode="challenge">Challenge Mode</button>
+
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span class="label">Time:</span>
+                <span id="timer">60</span>s
+            </div>
+            <div class="stat-box">
+                <span class="label">WPM:</span>
+                <span id="wpm">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Accuracy:</span>
+                <span id="accuracy">0</span>%
+            </div>
+            <div class="stat-box">
+                <span class="label">Streak:</span>
+                <span id="streak">0</span> days
+            </div>
+            <div class="stat-box">
+                <span class="label">Errors:</span>
+                <span id="errors">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Level:</span>
+                <span id="level">1</span>
+            </div>
+        </div>
+
+        <div class="difficulty-selector">
+            <label>Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+                <option value="expert">Expert</option>
+            </select>
+        </div>
+
+        <div id="test-area">
+            <div id="text-display" class="text-display">Click start to begin the test...</div>
+            <textarea id="input-area" placeholder="Start typing here..." disabled></textarea>
+        </div>
+
+        <div class="button-group">
+            <button id="start-btn" class="primary-btn">Start Test</button>
+            <button id="submit-btn" class="primary-btn" disabled>Submit</button>
+            <button id="reset-btn" class="secondary-btn" disabled>Reset</button>
+            <button id="practice-btn" class="secondary-btn">Practice Mode</button>
+        </div>
+
+        <div class="results" id="results" style="display: none;">
+            <h2>Test Results</h2>
+            <div class="detailed-results">
+                <div class="result-item">
+                    <h3>Words Per Minute</h3>
+                    <span id="result-wpm">0</span>
+                </div>
+                <div class="result-item">
+                    <h3>Accuracy</h3>
+                    <span id="result-accuracy">0%</span>
+                </div>
+                <div class="result-item">
+                    <h3>Total Words</h3>
+                    <span id="result-words">0</span>
+                </div>
+                <div class="result-item">
+                    <h3>Total Time</h3>
+                    <span id="result-time">0s</span>
+                </div>
+                <div class="result-item">
+                    <h3>Errors</h3>
+                    <span id="result-errors">0</span>
+                </div>
+                <div class="result-item">
+                    <h3>Level Reached</h3>
+                    <span id="result-level">1</span>
+                </div>
+            </div>
+            <div class="charts-container">
+                <canvas id="speed-chart" width="400" height="200"></canvas>
+                <canvas id="accuracy-chart" width="400" height="200"></canvas>
+                <canvas id="progress-chart" width="400" height="200"></canvas>
+            </div>
+        </div>
+
+        <div class="statistics" id="statistics">
+            <h2>Your Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>Average WPM</h3>
+                    <span id="avg-wpm">0</span>
+                </div>
+                <div class="stat-item">
+                    <h3>Best WPM</h3>
+                    <span id="best-wpm">0</span>
+                </div>
+                <div class="stat-item">
+                    <h3>Total Tests</h3>
+                    <span id="total-tests">0</span>
+                </div>
+                <div class="stat-item">
+                    <h3>Time Practiced</h3>
+                    <span id="practice-time">0 min</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

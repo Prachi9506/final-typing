@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Master</title>
+    <style>
+        :root {
+            font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            font-weight: 400;
+            color-scheme: light dark;
+            background-color: #1a1a1a;
+            color: rgba(255, 255, 255, 0.87);
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 3.2em;
+            margin-bottom: 2rem;
+            color: #646cff;
+            text-shadow: 0 0 10px rgba(100, 108, 255, 0.3);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border: 2px solid #646cff;
+            border-radius: 8px;
+            background-color: transparent;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #646cff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(100, 108, 255, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Typing Master</h1>
+        <div class="button-container">
+            <button class="btn" id="practiceBtn">Practice</button>
+            <button class="btn" id="learnBtn">Learn</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('practiceBtn').addEventListener('click', () => {
+            window.location.href = 'practice/index.html';
+        });
+
+        document.getElementById('learnBtn').addEventListener('click', () => {
+            window.location.href = 'typing-learner/index.html';
+        });
+    </script>
+</body>
+</html>

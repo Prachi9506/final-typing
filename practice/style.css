@@ -1,0 +1,337 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --background-color: #f3f4f6;
+    --text-color: #1f2937;
+    --error-color: #ef4444;
+    --success-color: #22c55e;
+    --neutral-color: #6b7280;
+    --card-bg: white;
+}
+
+[data-theme="dark"] {
+    --primary-color: #60a5fa;
+    --secondary-color: #3b82f6;
+    --background-color: #111827;
+    --text-color: #f3f4f6;
+    --error-color: #f87171;
+    --success-color: #34d399;
+    --neutral-color: #9ca3af;
+    --card-bg: #1f2937;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+.theme-switch {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--neutral-color);
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-switch:hover {
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.mode-selector {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.mode-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 0.5rem;
+    background: transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mode-btn.active {
+    background: var(--primary-color);
+    color: var(--card-bg);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-box {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.label {
+    color: var(--neutral-color);
+    font-size: 0.875rem;
+}
+
+.difficulty-selector {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.difficulty-selector select {
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--neutral-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+#test-area {
+    margin-bottom: 2rem;
+}
+
+.text-display {
+    background: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+.text-display .correct {
+    color: var(--success-color);
+}
+
+.text-display .incorrect {
+    color: var(--error-color);
+    text-decoration: underline;
+}
+
+#input-area {
+    width: 100%;
+    height: 150px;
+    padding: 1rem;
+    border: 2px solid var(--neutral-color);
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    resize: none;
+    font-family: monospace;
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+#input-area:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.primary-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background: var(--secondary-color);
+}
+
+.secondary-btn {
+    background: var(--neutral-color);
+    color: var(--card-bg);
+}
+
+.secondary-btn:hover {
+    opacity: 0.9;
+}
+
+.secondary-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.results {
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background: var(--background-color);
+}
+
+.results h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.detailed-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.result-item {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.result-item h3 {
+    color: var(--neutral-color);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.result-item span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.charts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.statistics {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--neutral-color);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.stat-item {
+    background: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.stat-item h3 {
+    color: var(--neutral-color);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Challenge Mode Styles */
+.challenge-active {
+    animation: challenge-pulse 2s infinite;
+}
+
+@keyframes challenge-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Distraction Mode Animations */
+@keyframes distraction {
+    0% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(5px) rotate(5deg); }
+    75% { transform: translateX(-5px) rotate(-5deg); }
+    100% { transform: translateX(0) rotate(0deg); }
+}
+
+.distraction {
+    position: fixed;
+    font-size: 2rem;
+    pointer-events: none;
+    animation: distraction 0.5s ease-in-out;
+}
+
+/* Practice Mode Styles */
+.practice-mode {
+    background: var(--background-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .mode-selector {
+        flex-direction: column;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .charts-container {
+        grid-template-columns: 1fr;
+    }
+}
